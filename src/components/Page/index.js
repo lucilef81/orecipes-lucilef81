@@ -1,15 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import Title from 'src/components/Title';
-import Recipe from 'src/components/Recipe';
-import Home from 'src/components/Home';
-
-const Page = () => (
+const Page = ({ children }) => (
   <main>
-    <Title />
-    {/* <Recipe /> */}
-    <Home />
+    {children}
   </main>
 );
+
+Page.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
+};
 
 export default Page;
