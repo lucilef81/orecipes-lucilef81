@@ -10,3 +10,11 @@ export const getUrlByRecipeTitle = (title) => {
   const url = `/recipe/${getSlugByRecipeTitle(title)}`;
   return url;
 };
+
+export const getRecipeBySlug = (recipes, slug) => {
+  // eslint-disable-next-line arrow-body-style
+  const recipe = recipes.find((currentRecipe) => {
+    return getSlugByRecipeTitle(currentRecipe.title) === slug;
+  });
+  return recipe;
+};
