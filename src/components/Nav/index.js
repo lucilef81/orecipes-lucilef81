@@ -1,13 +1,15 @@
 import React from 'react';
 
+import NavStyled from './NavStyled';
+
 const Nav = () => (
-  <nav>
+  <NavStyled>
     <a href="">lorem</a>
     <a href="">lorem</a>
     <a href="">lorem</a>
     <a href="">lorem</a>
     <a href="">lorem</a>
-  </nav>
+  </NavStyled>
 );
 
 export default Nav;

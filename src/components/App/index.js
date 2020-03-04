@@ -10,7 +10,7 @@ import Home from 'src/components/Home';
 const App = () => (
   <div>
     <Nav />
-    <Page title="truc">
+    <Page>
       <Title />
       <Home />
     </Page>

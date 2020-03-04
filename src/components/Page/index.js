@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import PageStyled from './PageStyled';
+
 const Page = ({ children }) => (
-  <main>
+  <PageStyled>
     {children}
-  </main>
+  </PageStyled>
 );
 
 Page.propTypes = {

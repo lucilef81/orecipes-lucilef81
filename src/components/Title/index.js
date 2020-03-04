@@ -1,7 +1,11 @@
 import React from 'react';
 
+import TitleStyled from './TitleStyled';
+
 const Title = () => (
-  <div>*Title*</div>
+  <TitleStyled>
+    <h1>oRecipes</h1>
+  </TitleStyled>
 );
 
 export default Title;
