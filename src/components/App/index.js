@@ -16,7 +16,7 @@ const App = () => (
       <Route path="/" exact>
         <Home />
       </Route>
-      <Route path="/recipe" exact>
+      <Route path="/recipe/:slug" exact>
         <Recipe />
       </Route>
     </Page>
