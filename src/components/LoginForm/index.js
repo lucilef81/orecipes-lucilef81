@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Field from './Field';
@@ -6,18 +6,23 @@ import Field from './Field';
 
 import './styles.css';
 
-const LoginForm = ({
-  email,
-  password,
-  changeField,
-  handleLogin,
-  handleLogout,
-  isLogged,
-  loggedMessage,
-}) => {
-  const handleSubmit = evt => {
-    evt.preventDefault();
-    handleLogin();
+const LoginForm = ({ login, logout, isLogged, loggedMessage }) => {
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  });
+
+  const changeField = e => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    const { email, password } = values;
+    login(email, password);
   };
 
   return (
@@ -25,11 +30,7 @@ const LoginForm = ({
       {isLogged && (
         <div className='login-form-logged'>
           <p className='login-form-message'>{loggedMessage}</p>
-          <button
-            type='button'
-            className='login-form-button'
-            onClick={handleLogout}
-          >
+          <button type='button' className='login-form-button' onClick={logout}>
             Déconnexion
           </button>
         </div>
@@ -44,14 +45,14 @@ const LoginForm = ({
             name='email'
             placeholder='Adresse Email'
             onChange={changeField}
-            value={email}
+            value={values.email}
           />
           <Field
             name='password'
             type='password'
             placeholder='Mot de passe'
             onChange={changeField}
-            value={password}
+            value={values.password}
           />
           <button type='submit' className='login-form-button'>
             OK
@@ -63,13 +64,8 @@ const LoginForm = ({
 };
 
 LoginForm.propTypes = {
-  email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  changeField: PropTypes.func.isRequired,
-  handleLogin: PropTypes.func.isRequired,
-  handleLogout: PropTypes.func.isRequired,
-  isLogged: PropTypes.bool,
-  loggedMessage: PropTypes.string,
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
 };
 
 LoginForm.defaultProps = {

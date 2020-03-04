@@ -18,7 +18,7 @@
   bottom: 2rem;
   padding: 2rem;
   text-align: center;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .presentation-title {
@@ -28,5 +28,5 @@
 }
 
 .presentation-infos {
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }

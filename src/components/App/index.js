@@ -10,14 +10,7 @@ import Recipe from 'src/containers/Recipe';
 import Home from 'src/containers/Home';
 import LoginForm from 'src/containers/LoginForm';
 
-const App = ({
-  fetchRecipes,
-  email,
-  password,
-  changeField,
-  handleLogin,
-  handleLogout,
-}) => {
+const App = ({ fetchRecipes }) => {
   // je déclenche mon chargement initial dès que l'appli est prête, dès que le composant App a été rendu
   useEffect(fetchRecipes, []);
   return (
@@ -25,16 +18,8 @@ const App = ({
       <Nav />
       <Page>
         <Title />
-        <LoginForm
-          email={email}
-          password={password}
-          changeField={changeField}
-          handleLogin={handleLogin}
-          handleLogout={handleLogout}
-        />
-        <Route path='/' exact>
-          <Home />
-        </Route>
+        <LoginForm />
+        <Route path='/' exact component={Home} />
         <Route path='/recipe/:slug' exact component={Recipe} />
       </Page>
     </div>
@@ -43,11 +28,6 @@ const App = ({
 
 App.propTypes = {
   fetchRecipes: PropTypes.func.isRequired,
-  email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  changeField: PropTypes.func.isRequired,
-  handleLogin: PropTypes.func.isRequired,
-  handleLogout: PropTypes.func.isRequired,
 };
 
 export default App;

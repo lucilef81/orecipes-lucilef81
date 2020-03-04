@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 
 import LoginForm from 'src/components/LoginForm';
-import { websocketConnect } from 'src/actions/auth';
+import { login, logout } from 'src/actions/auth';
 
-const mapStateToProps = null;
+const mapStateToProps = state => ({
+  isLogged: state.auth.isLogged,
+});
 
 const mapDispatchToProps = dispatch => ({
-  websocketConnect: () => {
-    dispatch(websocketConnect());
-  },
+  login: (email, password) => dispatch(login(email, password)),
+  logout: () => dispatch(logout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

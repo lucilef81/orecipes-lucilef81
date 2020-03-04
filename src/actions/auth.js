@@ -1,15 +1,20 @@
-export const AUTH = 'AUTH';
-export const ERR = 'ERR';
-export const WEBSOCKET_CONNECT = 'WEBSOCKET_CONNECT';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const GET_USER = 'GET_USER';
 
-export const Auth = () => ({
-  type: AUTH,
+export const login = (email, password) => ({
+  type: LOGIN,
+  payload: {
+    email,
+    password,
+  },
 });
 
-export const err = () => ({
-  type: ERR,
+export const logout = () => ({
+  type: LOGOUT,
 });
 
-export const websocketConnect = () => ({
-  type: WEBSOCKET_CONNECT,
+export const getUser = user => ({
+  type: GET_USER,
+  payload: user,
 });

@@ -1,29 +1,27 @@
-import { AUTH, ERR } from 'src/actions/auth';
+import { LOGOUT, GET_USER } from 'src/actions/auth';
 
 const initialState = {
   hasError: false,
+  isLogged: false,
   user: {
     email: '',
-    password: '',
   },
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case AUTH:
+    case GET_USER:
       return {
         ...state,
-        user: {
-          ...state.user,
-          email: action.email,
-          password: action.password,
-        },
+        user: action.payload,
+        isLogged: true,
       };
-    case ERR:
+    case LOGOUT: {
       return {
-        ...state,
-        hasError: true,
+        user: null,
+        isLogged: false,
       };
+    }
     default:
       return state;
   }

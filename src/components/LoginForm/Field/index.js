@@ -7,10 +7,6 @@ import './styles.css';
 
 // == Composant
 const Field = ({ value, type, name, placeholder, onChange }) => {
-  const handleChange = evt => {
-    onChange(evt.target.value, name);
-  };
-
   const inputId = `field-${name}`;
 
   return (
@@ -18,7 +14,7 @@ const Field = ({ value, type, name, placeholder, onChange }) => {
       <input
         // React - state
         value={value}
-        onChange={handleChange}
+        onChange={onChange}
         // infos de base
         id={inputId}
         type={type}
