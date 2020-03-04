@@ -7,6 +7,10 @@ const CardStyled = styled.article`
   width: calc(50% - 4rem);
   overflow:hidden;
 
+  @media screen and (max-width: 800px) {
+    width: calc(100% - 4rem);
+  }
+
   img {
     max-width: 100%;
   }
@@ -17,6 +21,9 @@ const CardStyled = styled.article`
     &-title {
       font-weight: bold;
       margin-bottom: 0.5rem;
+      @media (max-width: 800px) {
+        font-size: 1.2em;
+      }
     }
 
     &-text {
