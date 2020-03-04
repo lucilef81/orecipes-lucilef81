@@ -10,6 +10,7 @@ import Recipe from 'src/containers/Recipe';
 import Home from 'src/containers/Home';
 
 const App = ({ fetchRecipes }) => {
+  // je déclenche mon chargement initial dès que l'appli est prête, dès que le composant App a été rendu
   useEffect(fetchRecipes, []);
   return (
     <div>
