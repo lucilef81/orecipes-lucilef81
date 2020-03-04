@@ -7,12 +7,14 @@ import Title from 'src/components/Title';
 import Recipe from 'src/components/Recipe';
 import Home from 'src/components/Home';
 
+import data from 'src/data';
+
 const App = () => (
   <div>
-    <Nav />
+    <Nav recipes={data} />
     <Page>
       <Title />
-      <Home />
+      <Recipe recipe={data[1]} />
     </Page>
   </div>
 );
