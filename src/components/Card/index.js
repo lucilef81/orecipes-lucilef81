@@ -1,16 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import CardStyled from './CardStyled';
 
-const Card = () => (
+const Card = ({ difficulty, thumbnail, title }) => (
   <CardStyled>
-    <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+    <img src={thumbnail} alt="" />
     <div className="content">
-      <h2 className="content-title">Titre</h2>
-      <p className="content-text">Difficulté : facile</p>
+      <h2 className="content-title">{title}</h2>
+      <p className="content-text">{difficulty}</p>
       <a className="content-link" href="">Voir la recette</a>
     </div>
   </CardStyled>
 );
+
+Card.propTypes = {
+  difficulty: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default Card;

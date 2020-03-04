@@ -14,6 +14,7 @@ const App = () => (
     <Nav recipes={data} />
     <Page>
       <Title />
+      <Home recipes={data} />
       <Recipe recipe={data[1]} />
     </Page>
   </div>
