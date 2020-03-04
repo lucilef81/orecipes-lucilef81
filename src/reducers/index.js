@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import recipes from './recipes';
+import auth from './auth';
 
 /*
   combineReducers combine nos reducers
@@ -9,4 +10,5 @@ import recipes from './recipes';
 
 export default combineReducers({
   recipes,
+  auth,
 });
