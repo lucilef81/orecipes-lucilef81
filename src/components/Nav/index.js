@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import NavStyled from './NavStyled';
 
 const Nav = ({ recipes }) => (
   <NavStyled>
-    <a href="">Accueil</a>
+    <NavLink exact to="/">Accueil</NavLink>
     {recipes.map(({ id, title }) => (
-      <a key={id} href="">{title}</a>
+      <NavLink exact to="/recipe" key={id}>{title}</NavLink>
     ))}
   </NavStyled>
 );

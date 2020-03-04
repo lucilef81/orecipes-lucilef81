@@ -17,6 +17,10 @@ const NavStyled = styled.nav`
     &:hover {
       color: orange;
     }
+
+    &.active {
+      text-decoration: underline;
+    }
   }
 `;
 
