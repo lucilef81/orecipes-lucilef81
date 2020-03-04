@@ -5,10 +5,8 @@ import Nav from 'src/containers/Nav';
 import Page from 'src/components/Page';
 
 import Title from 'src/components/Title';
-import Recipe from 'src/components/Recipe';
-import Home from 'src/components/Home';
-
-import data from 'src/data';
+import Recipe from 'src/containers/Recipe';
+import Home from 'src/containers/Home';
 
 const App = () => (
   <div>
@@ -16,10 +14,10 @@ const App = () => (
     <Page>
       <Title />
       <Route path="/" exact>
-        <Home recipes={data} />
+        <Home />
       </Route>
       <Route path="/recipe" exact>
-        <Recipe recipe={data[1]} />
+        <Recipe />
       </Route>
     </Page>
   </div>
