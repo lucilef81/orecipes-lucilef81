@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 import Nav from 'src/components/Nav';
 import Page from 'src/components/Page';
@@ -14,8 +15,12 @@ const App = () => (
     <Nav recipes={data} />
     <Page>
       <Title />
-      <Home recipes={data} />
-      <Recipe recipe={data[1]} />
+      <Route path="/" exact>
+        <Home recipes={data} />
+      </Route>
+      <Route path="/recipe" exact>
+        <Recipe recipe={data[1]} />
+      </Route>
     </Page>
   </div>
 );
