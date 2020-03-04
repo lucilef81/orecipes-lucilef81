@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import Nav from 'src/components/Nav';
+import Nav from 'src/containers/Nav';
 import Page from 'src/components/Page';
 
 import Title from 'src/components/Title';
@@ -12,7 +12,7 @@ import data from 'src/data';
 
 const App = () => (
   <div>
-    <Nav recipes={data} />
+    <Nav />
     <Page>
       <Title />
       <Route path="/" exact>
